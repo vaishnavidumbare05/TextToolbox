@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Tool</title>
+    <style>
+       
+        .app-name{
+            text-align: center;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            color:crimson;
+            margin-top:40px;
+            margin-bottom: 30px;;
+            
+        }
+        .app-heading{
+            margin-top:10px;
+            text-align:center;
+            color:rgb(116, 5, 5);
+            
+        }
+        .input-text-container{
+            background-color: rgb(232, 210, 185);
+            width:60%;
+            height:250px;
+            display:block;
+            margin-top:40px ;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+            border-radius:25px 0px 25px 0px;
+            text-align:center;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size:25px;
+            color:rgb(116, 5, 5);
+            
+        }
+        .input-text-container:hover{
+            box-shadow:2px 2px 5px 10px rgb(241, 234, 227);
+        }
+        .btn-container{
+           display:flex;
+           justify-content:space-evenly;
+        }
+        .action-btn{
+            background-color: #2B86C5;
+            padding:15px 20px;
+            border-radius:5px;
+            color:white;
+            font-size:20px;
+            
+            
+             }
+        .action-btn:hover{
+            background-color: #003366;
+            padding:18px 23px;
+           
+    
+        }
+        .result-text{
+
+            width:70%;
+            display:block;
+            height:80px;
+            margin:20px auto;
+            text-align: center;
+            font-size:35px;
+            color:rgb(78, 6, 6);
+            margin-top:40px;
+        }
+        </style>
+</head>
+<body>
+    <h1 class="app-name">TextToolbox</h1>
+    <h2 class="app-heading"> Write Your Text Here...!!</h2>
+    <input type="text" class="input-text-container" id="input-text" >
+    <p id="result-text" class="result-text"></p>
+
+    <div class="btn-container">
+        <button class="action-btn" onclick="giveActionResult('uppercase')">UPPERCASE</button>
+        <button class="action-btn" onclick="giveActionResult('lowercase')">lowercase</button>
+        <button class="action-btn"onclick="giveActionResult('charcount')">Chracter Count</button>
+        <button class="action-btn" onclick="giveActionResult('wordcount')">Word Count</button>
+        </div>
+        <script>
+            const inputElement=document.getElementById("input-text")
+            const resultElement=document.getElementById("result-text")
+
+             function giveActionResult(action){
+            
+            if(action == 'uppercase'){
+             resultElement.innerText=inputElement.value.toUpperCase()
+           }
+           else if(action == 'lowercase'){
+            resultElement.innerText=inputElement.value.toLowerCase()
+           }
+           else if(action == 'charcount'){
+             resultElement.innerText=`Total Character is: ${inputElement.value.length}`
+           }
+           else {
+            resultElement.innerText=`Total WordCount is : ${inputElement.value.split(" ").length} `
+           }
+            }
+
+    </script>
+            
+</body>
+</html>
